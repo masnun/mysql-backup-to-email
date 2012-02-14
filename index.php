@@ -6,7 +6,7 @@ require_once 'mailer.php';
 $sqlFile = $tmpDir . $dbName . date('Y_m_d') . ".sql"; // The dumped SQL File
 $attachment = $tmpDir . $dbName . "_" . date('Y_m_d') . ".tgz"; // TGZed file
 
-$creatBackup = "mysqldump -u '" . $user . "' --password='" . $password . "' '" . $dbName . "' > '" . $sqlFile . "'"; // Full command
+$creatBackup = "mysqldump -h '" . $dbHost .  "' -u '" . $user . "' --password='" . $password . "' '" . $dbName . "' > '" . $sqlFile . "'"; // Full command
 $createZip = "tar cvzf $attachment $sqlFile"; // Full Command
 
 // Execute 'em
